@@ -73,7 +73,7 @@ module.exports = {
             return cloudinary.uploader.upload(
                 file,
                 (result) => {
-                    callback({ ...result, public_id: `${result.public_id}#${file}` });
+                    callback(Object.assign({}, result, { public_id: `${result.public_id}#${file}` }));
                 },
                 options,
             );
