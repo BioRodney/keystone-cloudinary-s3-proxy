@@ -72,7 +72,9 @@ module.exports = {
             return cloudinary.uploader.upload(
                 file.path,
                 (result) => {
-                    callback(Object.assign({}, result, { public_id: `${result.public_id}#${file.originalname}` }));
+                    const fileExtension = file.originalname.split('.').pop();
+                    const public_id = `${result.public_id}#${file.path}.${fileExtension}`;
+                    callback(Object.assign({}, result, { public_id }));
                 },
                 options,
             );
@@ -89,7 +91,7 @@ module.exports = {
      */
     async getFileFromBucket(bucketName, fileName) {
         ensureS3();
-        const { Body } = await s3.getObject({ Bucket: bucketName, Key: fileName }).promise();
+        const {Body} = await s3.getObject({Bucket: bucketName, Key: fileName}).promise();
         return Body;
     },
 };
