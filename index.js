@@ -69,12 +69,13 @@ module.exports = {
             return cloudinary.uploader.destroy(public_id, callback, options);
         },
         upload(file, callback, options) {
+            console.log({file})
             return cloudinary.uploader.upload(
                 file.path,
                 (result) => {
                     const fileExtension = file.originalname.split('.').pop();
                     const public_id = `${result.public_id}#${file.path}.${fileExtension}`;
-                    callback(Object.assign({}, result, { public_id }));
+                    callback(Object.assign({}, result, {public_id}));
                 },
                 options,
             );
