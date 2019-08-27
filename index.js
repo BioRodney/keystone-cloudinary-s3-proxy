@@ -51,12 +51,12 @@ module.exports = {
             '       const parts = image.src.split("#");\n' +
             '       if (parts.length > 1) {\n' +
             '           image.onerror = (event) => {\n' +
-            '               event.target.src = `${parts[0]}?${Date.now()}`;\n' +
+            '               event.target.src = parts[0];\n' +
             '               image.classList.remove("s3");\n' +
             '               image.onerror = undefined;\n' +
             '           };\n' +
             '           image.classList.add("s3");\n' +
-            '           image.src = parts[1];\n' +
+            '           image.src = `${parts[1]}?${Date.now()}`;\n' +
             '       }\n' +
             '    });\n' +
             '});\n' +
