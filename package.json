@@ -22,6 +22,6 @@
   "homepage": "https://github.com/BioRender-Team/keystone-cloudinary-s3-proxy#readme",
   "dependencies": {
     "aws-sdk": "^2.435.0",
-    "cloudinary": "1.4.1"
+    "cloudinary": "1.41.2"
   }
 }
