@@ -1,5 +1,5 @@
 {
-  "name": "keystone-cloudinary-s3-proxy",
+  "name": "@BioRender-Team/keystone-cloudinary-s3-proxy",
   "version": "1.0.0",
   "description": "proxy between keystone and cloudinary that also updates s3",
   "main": "index.js",
@@ -10,6 +10,10 @@
     "type": "git",
     "url": "git+https://github.com/BioRender-Team/keystone-cloudinary-s3-proxy.git"
   },
+  "publishConfig": {
+    "@BioRender-Team:registry": "https://npm.pkg.github.com"
+  },
+
   "author": "biorender",
   "license": "ISC",
   "bugs": {
